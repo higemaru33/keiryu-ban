@@ -3,7 +3,7 @@ import * as Notifications from 'expo-notifications';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const API_KEY = '887612e0-29c9-11f1-a882-0242ac120004-88761344-29c9-11f1-a882-0242ac120004';
+const API_KEY = process.env.EXPO_PUBLIC_API_KEY || '';
 const LAT = 34.48;
 const LNG = 134.08;
 
