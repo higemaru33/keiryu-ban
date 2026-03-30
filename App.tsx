@@ -86,10 +86,8 @@ export default function App() {
 
   async function fetchSwell() {
     try {
-      const r = await fetch(
-        `https://api.stormglass.io/v2/weather/point?lat=${LAT}&lng=${LNG}&params=swellHeight,swellDirection,swellPeriod`,
-        { headers: { Authorization: API_KEY } }
-      );
+      const r = await fetch('/api/swell');
+      
       const data = await r.json();
       const hours = data.hours;
       const h0 = hours[0];
