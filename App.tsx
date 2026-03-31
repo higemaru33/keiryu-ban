@@ -143,7 +143,9 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>係留番</Text>
       <Text style={styles.sub}>豊島沖 うねり情報</Text>
-
+      <TouchableOpacity onPress={fetchSwell} style={styles.refreshBtn}>
+        <Text style={styles.refreshBtnText}>更新</Text>
+      </TouchableOpacity>
       {notifScheduled && (
         <View style={styles.notifBadge}>
           <Text style={styles.notifBadgeText}>毎日17:00に通知設定済み</Text>
@@ -234,4 +236,6 @@ const styles = StyleSheet.create({
   historyResult: { fontSize: 14, fontWeight: 'bold', marginBottom: 2 },
   historyDetail: { fontSize: 11, color: '#aaa' },
   error: { fontSize: 16, color: '#E24B4A' },
+  refreshBtn: { marginBottom: 16, borderWidth: 1, borderColor: '#888', borderRadius: 8, paddingVertical: 6, paddingHorizontal: 20 },
+  refreshBtnText: { fontSize: 13, color: '#888', textAlign: 'center' },
 });
